@@ -1,0 +1,205 @@
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+:root {
+	/* Colors */
+	--moderate-violet: hsl(263, 55%, 52%);
+	--very-dark-grayish-blue: hsl(217, 19%, 35%);
+	--very-dark-blackish-blue: hsl(219, 29%, 14%);
+	--white: hsl(0, 0%, 100%);
+
+	/* Nuetral */
+	--light-gray: hsl(0, 0%, 81%);
+	--light-grayish-blue: hsl(210, 46%, 95%);
+
+	/* Special Text */
+	--verified: hsla(0, 0%, 100%, 0.5);
+	--comment: hsla(0, 0%, 100%, 0.7);
+
+	--s-verified: hsla(219, 29%, 14%, 0.5);
+	--s-comment: hsla(219, 29%, 14%, 0.7);
+}
+
+body {
+	font-size: 13px;
+	font-weight: 500;
+	font-family: "Barlow Semi Condensed", sans-serif;
+	background-color: var(--light-grayish-blue);
+}
+
+/* Typography */
+#kira p.verified,
+#jeanette p.verified {
+	color: var(--s-verified);
+}
+#kira p.comment,
+#jeanette p.comment {
+	color: var(--s-comment);
+}
+
+.name {
+	font-weight: 600;
+	color: var(--white);
+	font-size: 15px;
+}
+
+.verified {
+	color: var(--verified);
+}
+
+.title {
+	color: var(--white);
+	font-weight: 600;
+	font-size: 20px;
+}
+
+.comment {
+	color: var(--comment);
+}
+
+.dark-text {
+	color: var(--very-dark-grayish-blue);
+}
+
+/* Layout (Colors)*/
+#daniel {
+	background: var(--moderate-violet) url("images/bg-pattern-quotation.svg")
+		no-repeat;
+	background-position: 90% 0;
+	/* background-position-x: right;
+	background-position-y: top; */
+}
+
+#jonathan {
+	background: var(--very-dark-grayish-blue);
+}
+
+#jeanette {
+	background: var(--white);
+}
+
+#patrick {
+	background: var(--very-dark-blackish-blue);
+}
+
+#kira {
+	background: var(--white);
+}
+
+/* Layout (Structure) */
+.container {
+	width: 90%;
+	max-width: 1400px;
+	margin: 4rem auto;
+}
+
+.testimony {
+	padding: 2rem;
+	margin-bottom: 2rem;
+	border-radius: 10px;
+	box-shadow: 3px 5px 10px var(--light-gray);
+}
+
+img {
+	border-radius: 50px;
+	width: 40px;
+	max-width: 100%;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+}
+
+.head {
+	margin-left: 20px;
+}
+
+.head > .name {
+	margin-bottom: -15px;
+}
+
+.header,
+.title {
+	margin-bottom: 1rem;
+}
+
+.title {
+	line-height: 1.3;
+}
+
+.comment {
+	line-height: 1.75;
+}
+
+/* Media Queries (tablets and small laptops)*/
+@media screen and (min-width: 765px) {
+	.main {
+		display: grid;
+		gap: 2rem;
+		grid-auto-columns: 1fr;
+		grid-template-areas:
+			"daniel daniel jonathan"
+			"jeanette patrick patrick"
+			"kira kira kira";
+	}
+
+	#daniel {
+		grid-area: daniel;
+	}
+	#jonathan {
+		grid-area: jonathan;
+	}
+	#kira {
+		grid-area: kira;
+	}
+	#jeanette {
+		grid-area: jeanette;
+	}
+	#patrick {
+		grid-area: patrick;
+	}
+
+	.testimony {
+		margin-bottom: 0;
+	}
+}
+
+/* Media Queries (laptops)*/
+@media screen and (min-width: 1200px) {
+	.main {
+		display: grid;
+		gap: 2rem;
+		grid-auto-columns: 1fr;
+		grid-template-areas:
+			"daniel daniel jonathan kira"
+			"jeanette patrick patrick kira";
+	}
+
+	#daniel {
+		grid-area: daniel;
+	}
+	#jonathan {
+		grid-area: jonathan;
+	}
+	#kira {
+		grid-area: kira;
+	}
+	#jeanette {
+		grid-area: jeanette;
+	}
+	#patrick {
+		grid-area: patrick;
+	}
+
+	.testimony {
+		margin-bottom: 0;
+	}
+}
