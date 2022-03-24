@@ -34,6 +34,10 @@ body {
 	background-color: var(--light-grayish-blue);
 }
 
+h1 {
+	display: none;
+}
+
 /* Typography */
 #kira p.verified,
 #jeanette p.verified {
